@@ -10,7 +10,6 @@ export default function SignUp() {
 
     const handleSubmit = (event) => {
         event.preventDefault(); 
-        console.log("Default action prevented");
     }
 
     return (
@@ -21,6 +20,40 @@ export default function SignUp() {
                     method='POST'
                     onSubmit={handleSubmit}
                 >
+                    <fieldset>
+                        <input
+                            id='username'
+                            type='text'
+                            placeholder='Username'
+                            value={username}
+                            onChange={(event) => setUsername(event.target.value)}
+                            required
+                        />
+                        <input
+                            id='email'
+                            type='email'
+                            placeholder='Email address'
+                            value={email}
+                            onChange={(event) => setEmail(event.target.value)}
+                            required
+                        />
+                        <input
+                            id='first-name'
+                            type='text'
+                            placeholder='First name'
+                            value={firstName}
+                            onChange={(event) => setFirstName(event.target.value)}
+                            required
+                        />
+                        <input
+                            id='last-name'
+                            type='text'
+                            placeholder='Last name'
+                            value={lastName}
+                            onChange={(event) => setLastName(event.target.value)}
+                            required
+                        />
+                    </fieldset>
                     <button>Submit me!</button>
                 </form>
             </div>
