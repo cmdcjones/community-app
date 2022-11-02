@@ -15,7 +15,6 @@ This will be a small scale application that will integrate concepts such as:
 
 This app utilizes:
 - Next.js 13 (beta) -- JavaScript
-- Nest.js
 - Turbopack (alpha)
 - PostgreSQL
 - Jest
