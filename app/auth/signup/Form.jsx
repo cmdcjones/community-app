@@ -34,7 +34,7 @@ export default function Form({
 
         return (
             <div className='signup-container'>
-                <h1>Hello from SignUp</h1>
+                <h1>Sign Up!</h1>
                 <div className='form-container'>
                     <form 
                         method='POST'
