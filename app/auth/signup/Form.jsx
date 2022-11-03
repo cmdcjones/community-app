@@ -1,38 +1,38 @@
-'use client';
-import { useState } from 'react';
-import Link from 'next/link';
-import Router from 'next/router';
 
-export default function SignUp() {
-    const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('');
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
+export default function Form({
+    username,
+    setUsername,
+    email,
+    setEmail,
+    firstName,
+    setFirstName,
+    lastName,
+    setLastName
+}) {
 
     const handleSubmit = (event) => {
-        event.preventDefault(); 
+            event.preventDefault(); 
 
-        try {
-            const body = { username, email, firstName, lastName };
+            try {
+                const body = { username, email, firstName, lastName };
 
-            fetch('/api/newuser', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(body)
-            });
+                fetch('/api/newuser', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(body)
+                });
 
-        } catch (error) {
-            console.error(error);
-        }
+            } catch (error) {
+                console.error(error);
+            }
 
-        setUsername('');
-        setEmail('');
-        setFirstName('');
-        setLastName('');
-    };
+            setUsername('');
+            setEmail('');
+            setFirstName('');
+            setLastName('');
+        };
 
-    return (
-        <>
+        return (
             <div className='signup-container'>
                 <h1>Sign Up!</h1>
                 <div className='form-container'>
@@ -78,7 +78,5 @@ export default function SignUp() {
                     </form>
                 </div>
             </div>
-            <Link href="/">Head back home</Link>
-       </>
-    );
+        );
 }
